@@ -57,26 +57,26 @@ public class IntentServiceImpl implements IntentService{
     }
 
     /**
-     *  Get one intent by id.
+     *  Get one intent by tag.
      *
-     *  @param id the id of the entity
+     *  @param tag the id of the entity
      *  @return the entity
      */
     @Override
-    public IntentDTO findOne(String id) {
-        log.debug("Request to get Intent : {}", id);
-        Intent intent = intentRepository.findOne(id);
+    public IntentDTO findOne(String tag) {
+        log.debug("Request to get Intent : {}", tag);
+        Intent intent = intentRepository.findByTag(tag);
         return intentMapper.toDto(intent);
     }
 
     /**
      *  Delete the  intent by id.
      *
-     *  @param id the id of the entity
+     *  @param tag the tag of the entity
      */
     @Override
-    public void delete(String id) {
-        log.debug("Request to delete Intent : {}", id);
-        intentRepository.delete(id);
+    public void delete(String tag) {
+        log.debug("Request to delete Intent : {}", tag);
+        intentRepository.deleteByTag(tag);
     }
 }

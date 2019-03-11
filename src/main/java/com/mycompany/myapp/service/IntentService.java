@@ -26,17 +26,17 @@ public interface IntentService {
     Page<IntentDTO> findAll(Pageable pageable);
 
     /**
-     *  Get the "id" intent.
+     *  Get the "tag" intent.
      *
-     *  @param id the id of the entity
+     *  @param tag the id of the entity
      *  @return the entity
      */
-    IntentDTO findOne(String id);
+    IntentDTO findOne(String tag);
 
     /**
-     *  Delete the "id" intent.
+     *  Delete the "tag" intent.
      *
-     *  @param id the id of the entity
+     *  @param tag the tag of the entity
      */
-    void delete(String id);
+    void delete(String tag);
 }

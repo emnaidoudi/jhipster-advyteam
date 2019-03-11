@@ -100,28 +100,28 @@ public class IntentResource {
     /**
      * GET  /intents/:id : get the "id" intent.
      *
-     * @param id the id of the intentDTO to retrieve
+     * @param tag the id of the intentDTO to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the intentDTO, or with status 404 (Not Found)
      */
-    @GetMapping("/intents/{id}")
+    @GetMapping("/intents/{tag}")
     @Timed
-    public ResponseEntity<IntentDTO> getIntent(@PathVariable String id) {
-        log.debug("REST request to get Intent : {}", id);
-        IntentDTO intentDTO = intentService.findOne(id);
+    public ResponseEntity<IntentDTO> getIntent(@PathVariable String tag) {
+        log.debug("REST request to get Intent : {}", tag);
+        IntentDTO intentDTO = intentService.findOne(tag);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(intentDTO));
     }
 
     /**
      * DELETE  /intents/:id : delete the "id" intent.
      *
-     * @param id the id of the intentDTO to delete
+     * @param tag the id of the intentDTO to delete
      * @return the ResponseEntity with status 200 (OK)
      */
-    @DeleteMapping("/intents/{id}")
+    @DeleteMapping("/intents/{tag}")
     @Timed
-    public ResponseEntity<Void> deleteIntent(@PathVariable String id) {
-        log.debug("REST request to delete Intent : {}", id);
-        intentService.delete(id);
-        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id)).build();
+    public ResponseEntity<Void> deleteIntent(@PathVariable String tag) {
+        log.debug("REST request to delete Intent : {}", tag);
+        intentService.delete(tag);
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, tag)).build();
     }
 }

@@ -11,5 +11,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 @SuppressWarnings("unused")
 @Repository
 public interface IntentRepository extends MongoRepository<Intent,String> {
-    
+    void deleteByTag(String tag);
+    Intent findByTag(String tag);
 }

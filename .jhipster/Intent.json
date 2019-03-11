@@ -5,11 +5,28 @@
         {
             "fieldName": "tag",
             "fieldType": "String",
+            "unique": true,
             "fieldValidateRules": [
                 "required"
             ]
         }
-
+    ,
+        {
+            "fieldName": "patterns",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responses",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "context_set",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "context_filter",
+            "fieldType": "String"
+        }
     ],
     "dto": "mapstruct",
     "service": "serviceImpl",

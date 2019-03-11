@@ -31,6 +31,27 @@ public class Intent implements Serializable {
     @Field("responses")
     private List<String> responses;
 
+    @Field("context_set")
+    private String context_set;
+    @Field("context_filter")
+    private String context_filter;
+
+    public String getContext_set() {
+        return context_set;
+    }
+
+    public void setContext_set(String context_set) {
+        this.context_set = context_set;
+    }
+
+    public String getContext_filter() {
+        return context_filter;
+    }
+
+    public void setContext_filter(String context_filter) {
+        this.context_filter = context_filter;
+    }
+
     public List<String> getPatterns() {
         return patterns;
     }
