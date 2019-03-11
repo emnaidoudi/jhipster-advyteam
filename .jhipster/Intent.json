@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tag",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+
+    ],
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "intent",
+    "pagination": "pagination",
+    "microserviceName": "Projet01",
+    "searchEngine": false
+}
